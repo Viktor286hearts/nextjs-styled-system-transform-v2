@@ -17,7 +17,7 @@ const Box = styled.div`
 export default function Index() {
 	return (
 		<ThemeProvider theme={theme}>
-			<Box height={0.8}>
+			<Box height={1.5}>
 				<p>Hello Next.js</p>
 			</Box>
 		</ThemeProvider>

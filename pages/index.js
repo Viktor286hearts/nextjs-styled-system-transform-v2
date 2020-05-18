@@ -4,22 +4,44 @@ import styled from '@emotion/styled';
 import { ThemeProvider } from 'emotion-theming';
 
 const theme = {
-	sizes: 30,
+	sizes: 5,
 };
 
 const Box = styled.div`
     display: inline-block;
 	border: 1px solid red;
 	${layout}
-	
+`;
+
+const BoxWithDefaultCSSProps = styled.div`
+    display: inline-block;
+	border: 1px solid red;
+	${layout}
 `;
 
 export default function Index() {
 	return (
 		<ThemeProvider theme={theme}>
-			<Box height={1.5}>
+			<Box
+				width={100}
+				height={.25}
+				minWidth={.3}
+				minHeight={.4}
+				maxWidth={.5}
+				maxHeight={.6}
+			>
 				<p>Hello Next.js</p>
 			</Box>
+			<BoxWithDefaultCSSProps
+				width='auto'
+				height='75%'
+				minWidth='40ch'
+				minHeight='100px'
+				maxWidth='99%'
+				maxHeight='99%'
+			>
+				<p>BoxWithDefaultCSSProps</p>
+			</BoxWithDefaultCSSProps>
 		</ThemeProvider>
 	);
 }

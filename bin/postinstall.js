@@ -53,14 +53,14 @@ const transform = async (code) => {
          * add line to the top of the file:
          * var {
                   customTransform: customTransform
-                } = require("{__dirname}/bin/customTransform");
+                } = require('../../../../bin/customTransform');
          */
         const variableDec = t.variableDeclaration('var', [
           t.variableDeclarator(
             t.objectPattern([
               t.objectProperty(t.identifier('customTransform'), t.identifier('customTransform')),
             ]),
-            t.callExpression(t.identifier('require'), [t.stringLiteral(__dirname + '/customTransform')]),
+            t.callExpression(t.identifier('require'), [t.stringLiteral('../../../../bin/customTransform')]),
           ),
         ]);
         filePath.unshiftContainer('body', variableDec);

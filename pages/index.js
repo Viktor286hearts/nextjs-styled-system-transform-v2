@@ -7,22 +7,22 @@ const theme = {
 	sizes: 5,
 };
 
-const Box = styled.div`
+const BoxWithScaledCSSProps = styled.div`
     display: inline-block;
-	border: 1px solid red;
-	${layout}
+    border: 1px solid red;
+    ${layout}
 `;
 
 const BoxWithDefaultCSSProps = styled.div`
     display: inline-block;
-	border: 1px solid red;
-	${layout}
+    border: 1px solid blue;
+    ${layout}
 `;
 
 export default function Index() {
 	return (
 		<ThemeProvider theme={theme}>
-			<Box
+			<BoxWithScaledCSSProps
 				width={100}
 				height={.25}
 				minWidth={.3}
@@ -31,7 +31,7 @@ export default function Index() {
 				maxHeight={.6}
 			>
 				<p>Hello Next.js</p>
-			</Box>
+			</BoxWithScaledCSSProps>
 			<BoxWithDefaultCSSProps
 				width='auto'
 				height='75%'
